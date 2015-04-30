@@ -30,7 +30,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website <?php echo date('Y'); ?></p>
+                    <p class="copyright text-muted">Copyright &copy; <?php bloginfo('name') ?> <?php echo date('Y'); ?></p>
                 </div>
             </div>
         </div>
