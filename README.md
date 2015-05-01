@@ -2,12 +2,13 @@
 
 [Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/) is a stylish, responsive blog theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form.
 
-MilloLab Team has developed a wordpress theme based on this beautiful theme to all you folks! For free!
+MilloLab Team has developed a wordpress theme based on this beautiful template to all you folks! For free!
 
 ## Getting Started
 
 To use this theme, choose one of the following options to get started:
 * Fork this repository on GitHub
+* We are studying few online options to share the theme with you for free.
 
 ## Installation
 
