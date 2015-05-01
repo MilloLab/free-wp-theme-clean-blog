@@ -1,5 +1,158 @@
 <?php 
 
+// adding custom footer social links support
+///////////////////////////////////////////////////////
+
+function register_customize_menu($wp_customize) {
+
+    $wp_customize->add_section('custom_header_img', array(
+        'title'     => __('Header image', 'cleanblog'),
+        'panel'     => '',
+        'priority'  => 3 
+        ));
+
+    $wp_customize->add_setting(
+      'custom_header_img',
+      array(
+          'default'           => get_template_directory_uri() . '/img/home-bg.jpg',
+          'transport'         => 'refresh'          
+      )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'custom_header_img',
+            array(
+                'label'          => __( 'Your header image', 'cleanblog' ),
+                'section'        => 'custom_header_img',
+                'settings'       => 'custom_header_img',
+                'context'        => 'menu_custom_image'
+            )
+        )
+    );
+
+
+  // Add Custom social links
+    $wp_customize->add_section( 'custom_social_links' , array(
+    'title'      => __('Social links','cleanblog'), 
+    'panel'      => '',
+    'priority'   => 1000    
+    ) );  
+
+
+    $wp_customize->add_setting(
+      'custom_facebook_link',
+      array(
+          'default'           => __( 'http://facebook.com', 'cleanblog' ),
+          'transport'         => 'refresh',
+          'sanitize_callback' => 'sanitize_text'          
+      )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'custom_facebook_link',
+            array(
+                'label'          => __( 'Your Facebook URL', 'cleanblog' ),
+                'section'        => 'custom_social_links',
+                'settings'       => 'custom_facebook_link',
+                'type'           => 'text'
+            )
+        )
+    );
+
+
+    $wp_customize->add_setting(
+      'custom_twitter_link',
+      array(
+          'default'           => __( 'http://twitter.com', 'cleanblog' ),
+          'transport'         => 'refresh',
+          'sanitize_callback' => 'sanitize_text'          
+      )
+    );    
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'custom_twitter_link',
+            array(
+                'label'          => __( 'Your Twitter URL', 'cleanblog' ),
+                'section'        => 'custom_social_links',
+                'settings'       => 'custom_twitter_link',
+                'type'           => 'text'
+            )
+        )
+    );     
+
+
+    $wp_customize->add_setting(
+      'custom_linkedin_link',
+      array(
+          'default'           => __( 'http://linkedin.com', 'cleanblog' ),
+          'transport'         => 'refresh',
+          'sanitize_callback' => 'sanitize_text'          
+      )
+    );    
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'custom_linkedin_link',
+            array(
+                'label'          => __( 'Your LinkedIn URL', 'cleanblog' ),
+                'section'        => 'custom_social_links',
+                'settings'       => 'custom_linkedin_link',
+                'type'           => 'text'
+            )
+        )
+    ); 
+
+
+    $wp_customize->add_setting(
+      'custom_github_link',
+      array(
+          'default'           => __( 'http://github.com', 'cleanblog' ),
+          'transport'         => 'refresh',
+          'sanitize_callback' => 'sanitize_text'          
+      )
+    );    
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'custom_github_link',
+            array(
+                'label'          => __( 'Your Github URL', 'cleanblog' ),
+                'section'        => 'custom_social_links',
+                'settings'       => 'custom_github_link',
+                'type'           => 'text'
+            )
+        )
+    ); 
+
+
+// Sanitize text 
+    function sanitize_text( $text ) {
+
+        return sanitize_text_field( $text );
+
+    }
+
+} // closing function
+
+add_action( 'customize_register', 'register_customize_menu' );
+
+
+// Add theme support for Custom Header Image
+// $defaults = array(
+//   'default-image'          => get_template_directory_uri() . '/img/home-bg.jpg', 
+//   'uploads'                => true
+// );
+// add_theme_support( 'custom-header', $defaults );
+
+
 // Theme plugins requirements
 ////////////////////////////////////////////////////////
 
@@ -148,10 +301,41 @@ function my_theme_register_required_plugins() {
 
 }
 
-// adding custom header image support
-////////////////////////////////////////////////////////
 
-add_theme_support( 'custom-header' );
+// adding custom footer social links support
+///////////////////////////////////////////////////////
+
+// function millolab_register_theme_customizer( $wp_customize ) {
+//     $wp_customize->add_section('custom_twitter_link', array(
+//         'title'     => __('Add Twitter Link', 'cleanblog'),
+//         'panel'     => 'social_settings',
+//         'priority'  => 10
+//         ));
+//     $wp_customize->add_setting('wpt_twitter_link', array(
+//         'default'               => __('Custom Twitter link', 'Clean Blog Theme'),
+//         'sanitize_callback'     => 'sanitize_text'
+//         ));
+//     $wp_customize->add_control(
+//         new WP_Customize_Control(
+//             $wp_customize,
+//             'custom_twitter_link', array(
+//                 'label'     =>  __('Twitter link', 'Clean Blog Theme'),
+//                 'section'   => 'custom_twitter_link',
+//                 'setting'   => 'cleanblog_twitter_link',
+//                 'type'      =>  'text'
+//                 )
+//             )
+//         );
+//     $wp_customize->add_panel('social_settings', array(
+//         'prority'           => 10,
+//         'theme_supports'    => '',
+//         'title'             => __('Social Settings', 'Clean Blog Theme'),
+//         'description'       => __('Introduce your social links', 'Clean Blog Theme'),
+//         ));
+// }
+
+// add_action('customize_register', 'millolab_register_theme_customizer');
+
 
 
 // adding css
