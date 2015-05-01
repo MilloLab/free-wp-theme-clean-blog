@@ -12,7 +12,7 @@ To use this theme, choose one of the following options to get started:
 
 ## Installation
 
-Just use the zip file to install the theme at Appearance > Themes > Add and upload it. 
+Just use [the zip file](https://github.com/MilloLab/free-wp-theme-clean-blog/blob/master/cleanblog.zip) to install the theme at Appearance > Themes > Add and upload it. 
 
 ### Plugins
 
