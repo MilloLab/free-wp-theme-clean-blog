@@ -1,5 +1,9 @@
 <?php 
 
+// Theme plugins requirements
+////////////////////////////////////////////////////////
+
+
 /**
  * This file represents an example of the code that themes would use to register
  * the required plugins.
@@ -191,7 +195,7 @@ add_theme_support( 'post-thumbnails' );
 // enabling nav menu
 ////////////////////////////////////////////////////////
 function register_my_menu() {
-  register_nav_menu('menu',__( 'Menu' ));
+    register_nav_menu('menu',__( 'Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
 
