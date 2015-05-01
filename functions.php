@@ -148,6 +148,10 @@ function my_theme_register_required_plugins() {
 
 }
 
+// adding custom header image support
+////////////////////////////////////////////////////////
+
+add_theme_support( 'custom-header' );
 
 
 // adding css
