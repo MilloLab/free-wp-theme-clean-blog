@@ -302,42 +302,6 @@ function my_theme_register_required_plugins() {
 }
 
 
-// adding custom footer social links support
-///////////////////////////////////////////////////////
-
-// function millolab_register_theme_customizer( $wp_customize ) {
-//     $wp_customize->add_section('custom_twitter_link', array(
-//         'title'     => __('Add Twitter Link', 'cleanblog'),
-//         'panel'     => 'social_settings',
-//         'priority'  => 10
-//         ));
-//     $wp_customize->add_setting('wpt_twitter_link', array(
-//         'default'               => __('Custom Twitter link', 'Clean Blog Theme'),
-//         'sanitize_callback'     => 'sanitize_text'
-//         ));
-//     $wp_customize->add_control(
-//         new WP_Customize_Control(
-//             $wp_customize,
-//             'custom_twitter_link', array(
-//                 'label'     =>  __('Twitter link', 'Clean Blog Theme'),
-//                 'section'   => 'custom_twitter_link',
-//                 'setting'   => 'cleanblog_twitter_link',
-//                 'type'      =>  'text'
-//                 )
-//             )
-//         );
-//     $wp_customize->add_panel('social_settings', array(
-//         'prority'           => 10,
-//         'theme_supports'    => '',
-//         'title'             => __('Social Settings', 'Clean Blog Theme'),
-//         'description'       => __('Introduce your social links', 'Clean Blog Theme'),
-//         ));
-// }
-
-// add_action('customize_register', 'millolab_register_theme_customizer');
-
-
-
 // adding css
 ////////////////////////////////////////////////////////
 function theme_styles() {
