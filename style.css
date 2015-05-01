@@ -410,3 +410,47 @@ body {
 .logged-in > nav {
   top: 20px !important;
 }
+
+/*custom styles for wpcf7*/
+
+.wpcf7 input, .wpcf7 textarea {
+  width: 100%;
+  outline: none;
+  border-color: transparent;
+  border-bottom: 1px solid #eee;
+}
+
+.wpcf7-form > p {
+  margin: 0;
+}
+
+.wpcf7-text, .wpcf7-textarea {
+  padding: 15px 0;
+}
+
+
+.wpcf7-submit {
+  width: auto !important;
+}
+
+.wpcf7-textarea {
+  resize: none;
+  max-height: 162px;
+}
+
+.wpcf7-submit {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  background-color: #fff;
+  padding: 15px 25px;
+  border: 1px solid #ccc !important;
+  margin-top: 30px;
+}
+
+.wpcf7-submit:hover {
+  background-color: #0085a1;
+  color: #fff;
+  border-color: #0085a1 !important;
+}
